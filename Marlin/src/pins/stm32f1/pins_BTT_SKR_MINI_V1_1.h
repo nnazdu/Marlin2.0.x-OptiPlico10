@@ -226,3 +226,21 @@
 #endif
 #define ONBOARD_SPI_DEVICE                     1  // SPI1
 #define ONBOARD_SD_CS_PIN                   PA4   // Chip select for "System" SD card
+
+//TMC 2208 UART mode
+
+#define X_PIN_UART PC10
+#define Y_PIN_UART PC11
+#define Z_PIN UART PC12
+#define E0_PIN_UART PC14
+
+#if HAS_DRIVER(TMC2208)
+  #define X_SERIAL_TX_PIN X_PIN_UART
+  #define X_SERIAL_RX_PIN X_PIN_UART
+  #define Y_SERIAL_TX_PIN Y_PIN_UART
+  #define Y_SERIAL_RX_PIN Y_PIN_UART
+  #define Z_SERIAL_TX_PIN Z_PIN UART
+  #define Z_SERIAL_RX_PIN Z_PIN UART
+  #define E0_SERIAL_TX_PIN E0_PIN_UART
+  #define E0_SERIAL_TX_PIN E0_PIN_UART
+#endif
