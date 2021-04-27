@@ -111,7 +111,7 @@
  */
 
 #if HAS_WIRED_LCD
-  #define BEEPER_PIN                        PC10
+  #define BEEPER_PIN                        -1
   #define BTN_ENC                           PC11
 
   #if ENABLED(CR10_STOCKDISPLAY)
@@ -138,8 +138,10 @@
 
     #define LCD_PINS_RS                     PC12
 
-    #define BTN_EN1                         PD2
-    #define BTN_EN2                         PB8
+    #define DOGLCD_A0                       PC15
+    #define DOGLCD_CS                       PB7
+    #define BTN_EN1                         PB8
+    #define BTN_EN2                         PD2
 
     #define LCD_PINS_ENABLE                 PB6
 
@@ -206,7 +208,7 @@
 // By default the onboard SD is enabled.
 // Change SDCARD_CONNECTION from 'ONBOARD' to 'LCD' for an external (LCD module) SD
 #ifndef SDCARD_CONNECTION
-  #define SDCARD_CONNECTION              ONBOARD
+  #define SDCARD_CONNECTION                 LCD
 #endif
 
 #if SD_CONNECTION_IS(LCD)
@@ -229,6 +231,7 @@
 
 //TMC 2208 UART mode
 
+/*
 #define X_PIN_UART PC10
 #define Y_PIN_UART PC11
 #define Z_PIN_UART PC12
@@ -243,4 +246,5 @@
   #define Z_SERIAL_RX_PIN Z_PIN_UART
   #define E0_SERIAL_RX_PIN E0_PIN_UART
   #define E0_SERIAL_TX_PIN E0_PIN_UART
-//#endif
+//#endif 
+*/
